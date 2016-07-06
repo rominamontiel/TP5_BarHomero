@@ -33,7 +33,7 @@ public class testBar {
 		
 		System.out.println("ORDENADO POR NOMBRE \n" + o.getLista()); /* Compruebo por consola que esta ordenado por Nombre */
 		
-		int esperado = 3;
+		int esperado = 3; 
 		
 		assertEquals(esperado,(o.getLista().size()));
 		
