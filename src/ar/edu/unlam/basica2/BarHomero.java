@@ -3,16 +3,37 @@ import java.util.*;
 
 public class BarHomero{
 
-	TreeSet<Cliente> clientes;
-	Cliente c;
+	private TreeSet<Cliente> listaClientes;
+	//private Cliente c;
+	private Boolean abierto;
 	
-	public void cargarClientes(){
+	
+	public void abrirBar(){
+		listaClientes = new TreeSet<Cliente>();
+		abierto=true;
+	}
+	
+	public void abrirBar(ComparePorEdad comparador){
+		listaClientes = new TreeSet<Cliente>();
+		abierto=true;
+	}
+	
+	public Boolean getAbierto(){
+		return abierto;
+	}
+	
+	public void cargarCliente(Cliente persona){
 		
-		Cliente obj = new Cliente(c.getEdad(),c.getNombre());
-		clientes.add(obj);
+		listaClientes.add(persona);
+				
 	}	
 	
-	
-	
+	public TreeSet<Cliente> getLista(){
+		return listaClientes;
+	}
 	
 } 
+
+
+/*Cliente obj = new Cliente(c.getEdad(),c.getNombre());
+listaClientes.add(obj);*/

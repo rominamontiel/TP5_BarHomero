@@ -31,8 +31,7 @@ public class Cliente implements Comparable<Cliente> {
 	
 	@Override
 	public String toString(){
-		return "Cliente [" + nombre + "," + edad + "]";
-		
+		return "Cliente [" + nombre + "," + edad + "]\n";
 	}
 		
 	@Override
@@ -68,18 +67,7 @@ public class Cliente implements Comparable<Cliente> {
 	}	
 	
 	
-	/*
-	@Override
-	public boolean equals (Object obj){
-		return true; // BORRAR !! 
-	}
-
-	
-	@Override
-	public int hashCode(){
-		return 1;
-	}*/
-		
+			
 } // FIN Cliente
 
 	
