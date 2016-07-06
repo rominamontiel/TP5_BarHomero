@@ -5,15 +5,17 @@ public class BarHomero{
 
 	private TreeSet<Cliente> listaClientes;
 	//private Cliente c;
-	private Boolean abierto;
+	private Boolean abierto=false;
 	
-	
+	public BarHomero(){
+		
+	}
 	public void abrirBar(){
 		listaClientes = new TreeSet<Cliente>();
 		abierto=true;
 	}
 	
-	public void abrirBar(ComparePorEdad comparador){
+	public BarHomero(ComparePorEdad comparador){
 		listaClientes = new TreeSet<Cliente>();
 		abierto=true;
 	}
@@ -27,6 +29,10 @@ public class BarHomero{
 		listaClientes.add(persona);
 				
 	}	
+	
+	public void setLista(TreeSet<Cliente> listaEdad){
+		listaClientes=listaEdad;
+	}
 	
 	public TreeSet<Cliente> getLista(){
 		return listaClientes;

@@ -3,7 +3,7 @@ package ar.edu.unlam.basica2;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-//import java.util.*;
+import java.util.*;
 
 public class testBar {
 
@@ -17,7 +17,7 @@ public class testBar {
 	}
 
 	@Test
-	public void testAgregarClientes(){
+	public void testAgregarClientesYOrdenarNaturalmente(){
 		
 		BarHomero o = new BarHomero();
 		
@@ -34,8 +34,9 @@ public class testBar {
 		System.out.println("ORDENADO POR NOMBRE \n" + o.getLista()); /* Compruebo por consola que esta ordenado por Nombre */
 		
 		int esperado = 3;
-		assertEquals(esperado,(o.getLista().size()));
 		
+		assertEquals(esperado,(o.getLista().size()));
+				
 	}
 	
 	@Test
@@ -62,23 +63,28 @@ public class testBar {
 	@Test
 	public void testAgregarClientesYOrdenarPorEDAD(){
 		
-		BarHomero o = new BarHomero();
-		ComparePorEdad compara = new ComparePorEdad();
+		ComparePorEdad comparator = new ComparePorEdad();
+		BarHomero o = new BarHomero(comparator);
 		
-		Cliente cliente1 = new Cliente(25,"Pablo");
-		Cliente cliente2 = new Cliente(22,"Juan");
-		Cliente cliente3 = new Cliente(18,"Matias");
+		Cliente cliente1 = new Cliente(30,"Pablo");
+		Cliente cliente2 = new Cliente(20,"Juan");
+		Cliente cliente3 = new Cliente(40,"Matias");
 		
-		o.abrirBar(compara);;
 		
-		o.cargarCliente(cliente1);
-		o.cargarCliente(cliente2);
-		o.cargarCliente(cliente3);
+		TreeSet<Cliente> lista = new TreeSet<Cliente>(comparator);
+		lista.add(cliente1);
+		lista.add(cliente2);
+		lista.add(cliente3);
 		
-		System.out.println("ORDENADO POR EDAD \n" +o.getLista()); /* Compruebo por consola que esta ordenado por Nombre */
+		o.setLista(lista);
 		
-		int esperado = 3;
-		assertEquals(esperado,(o.getLista().size()));
+		System.out.println("ORDENADO POR EDAD \n" +o.getLista()); /* Compruebo por consola que esta ordenado por EDAD */
+		
+		Integer menorEdad=20;
+		Integer mayorEdad=40;
+		assertEquals(menorEdad,o.getLista().first().getEdad());
+		assertEquals(mayorEdad,o.getLista().last().getEdad());
+		
 		
 	}
 	
