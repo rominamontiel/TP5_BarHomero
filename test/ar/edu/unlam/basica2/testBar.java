@@ -36,7 +36,9 @@ public class testBar {
 		int esperado = 3;
 		
 		assertEquals(esperado,(o.getLista().size()));
-				
+		
+		assertEquals("Juan",o.getLista().first().getNombre());
+		assertEquals("Pablo",o.getLista().last().getNombre());		
 	}
 	
 	@Test
