@@ -31,12 +31,14 @@ public class testBar {
 		o.cargarCliente(cliente2);
 		o.cargarCliente(cliente3);
 		
-		System.out.println("ORDENADO POR NOMBRE \n" + o.getLista()); /* Compruebo por consola que esta ordenado por Nombre */
+		System.out.println("ORDENADO POR NOMBRE \n" + o.getLista()); //Compruebo por consola que esta ordenado por Nombre 
 		
 		int esperado = 3; 
 		
+		// Testeo que se hayan cargado los tres clientes
 		assertEquals(esperado,(o.getLista().size()));
 		
+		//Testeo que estén ordenados alfabéticamente
 		assertEquals("Juan",o.getLista().first().getNombre());
 		assertEquals("Pablo",o.getLista().last().getNombre());		
 	}
@@ -48,7 +50,7 @@ public class testBar {
 		
 		Cliente cliente1 = new Cliente(25,"Pablo");
 		Cliente cliente2 = new Cliente(22,"Juan");
-		Cliente cliente3 = new Cliente(25,"Pablo");
+		Cliente cliente3 = new Cliente(18,"Pablo");
 		
 		o.abrirBar();
 		
@@ -57,7 +59,7 @@ public class testBar {
 		o.cargarCliente(cliente3);
 		
 		
-		int esperado = 2; // Solo 2 distintos
+		int esperado = 2; // Solo 2 NOMBRES distintos
 		assertEquals(esperado,(o.getLista().size()));
 		
 	}
@@ -80,7 +82,7 @@ public class testBar {
 		
 		o.setLista(lista);
 		
-		System.out.println("ORDENADO POR EDAD \n" +o.getLista()); /* Compruebo por consola que esta ordenado por EDAD */
+		System.out.println("ORDENADO POR EDAD \n" +o.getLista()); // Compruebo por consola que esta ordenado por EDAD 
 		
 		Integer menorEdad=20;
 		Integer mayorEdad=40;
